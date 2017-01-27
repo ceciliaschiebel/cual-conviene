@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-4 col-md-4">
+      <calculator ng-show="!$ctrl.showResults" results="$ctrl.results" show-results="$ctrl.showResults"></calculator>
+      <div ng-show="$ctrl.showResults" results="$ctrl.results" show-results="$ctrl.showResults">
+        <results results="$ctrl.results" show-results="$ctrl.showResults"></results>
+        <button type="button" class="btn btn-info btn-raised" ng-click="$ctrl.changeShowResults()">Volver</button>
+      </div>
+    </div>
+  </div>
+</div>
+

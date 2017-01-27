@@ -1,0 +1,29 @@
+@color-cheaper: #09c686;
+@color-expensive: #ff3f2b;
+@color-equal: #ffcc00;
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.addMarginBottom {
+  margin-bottom: 30px;
+}
+
+.panel.panel-success > .panel-heading {
+    background-color: @color-cheaper;
+}
+
+.panel.panel-warning > .panel-heading {
+    background-color: @color-equal;
+}
+
+.panel.panel-danger > .panel-heading {
+    background-color: @color-expensive;
+}
+
+#btnClean {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}

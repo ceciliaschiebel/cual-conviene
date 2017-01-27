@@ -1,0 +1,71 @@
+<!--data input-->
+  <ng-form name="$ctrl.calculatorForm">
+    <div class="row">
+      <!--<div class="col-xs-12">-->
+        <div class="panel panel-default" ng-class="{ 'panel-success': $ctrl.results.cheaper.name == 'A', 'panel-warning': $ctrl.results.cheaper.name == 'equal', 'panel-danger': $ctrl.results.cheaper.name == 'B' || $ctrl.emptyInput}">
+          <div class="panel-heading">
+            Producto A
+            <span ng-show="$ctrl.results.cheaper.name == 'A'">
+              &nbsp <strong>%{{$ctrl.results.stats.percentageSave | number : 1}} más barato</strong>
+            </span>
+            <span ng-show="$ctrl.results.cheaper.name == 'equal'">
+              &nbsp <strong>mismo costo</strong>
+            </span>
+          </div>
+          <div class="panel-body">
+            <div class="input-group" ng-class="{ 'has-error' : $ctrl.calculatorForm.inputPriceA.$invalid && !$ctrl.calculatorForm.inputPriceA.$pristine }">
+              <input type="number" name="inputPriceA" id="inputPriceA" class="form-control input-lg" min="0.01" step="0.01" placeholder="Precio" ng-model="$ctrl.prodA.price" ng-required="true">
+              <div class="input-group-addon">
+                <span class="fa fa-dollar"></span>
+              </div>
+            </div>
+
+            <div class="input-group" ng-class="{ 'has-error' : $ctrl.calculatorForm.inputAmountA.$invalid && !$ctrl.calculatorForm.inputAmountA.$pristine }">
+              <input type="number" name="inputAmountA" id="inputAmountA" class="form-control input-lg" min="0.01" step="0.01" placeholder="Cantidad" ng-model="$ctrl.prodA.amount" ng-required="true">
+              <div class="input-group-addon">
+                <span class="fa fa-balance-scale"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!--</div>-->
+
+      <!--<div class="col-xs-12">-->
+        <div class="panel panel-default" ng-class="{ 'panel-success': $ctrl.results.cheaper.name == 'B', 'panel-warning': $ctrl.results.cheaper.name == 'equal', 'panel-danger': $ctrl.results.cheaper.name == 'A' || $ctrl.emptyInput}">
+          <div class="panel-heading">Producto B
+            <span ng-show="$ctrl.results.cheaper.name == 'B'">
+              &nbsp <strong>%{{$ctrl.results.stats.percentageSave | number : 1}} más barato</strong>
+            </span>
+            <span ng-show="$ctrl.results.cheaper.name == 'equal'">
+              &nbsp <strong>mismo costo</strong>
+            </span>
+          </div>
+          <div class="panel-body">
+            <div class="input-group" ng-class="{ 'has-error' : $ctrl.calculatorForm.inputPriceB.$invalid && !$ctrl.calculatorForm.inputPriceB.$pristine }">
+              <input type="number" name="inputPriceB" id="inputPriceB" class="form-control input-lg" min="0.01" step="0.01" placeholder="Precio" ng-model="$ctrl.prodB.price" ng-required="true">
+              <div class="input-group-addon">
+                <span class="fa fa-dollar"></span>
+              </div>
+            </div>
+
+            <div class="input-group" ng-class="{ 'has-error' : $ctrl.calculatorForm.inputAmountB.$invalid && !$ctrl.calculatorForm.inputAmountB.$pristine }">
+              <input type="number" name="inputAmountB" id="inputAmountB" class="form-control input-lg" min="0.01" step="0.01" placeholder="Cantidad" ng-model="$ctrl.prodB.amount" ng-required="true">
+              <div class="input-group-addon">
+                <span class="fa fa-balance-scale"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--</div> -->
+    
+    <button type="submit" class="btn btn-info btn-raised" ng-click="$ctrl.validateForm($ctrl.calculatorForm)">Comparar</button>
+    <button type="button" class="btn btn-default btn-raised pull-right" ng-show="$ctrl.showBtnResults" ng-click="$ctrl.seeResults()">Resultados</button>
+    <button id="btnClean" class="btn btn-default btn-fab" ng-click="$ctrl.clearForm($ctrl.calculatorForm)"><span class="fa fa-trash"></span></button>
+  </ng-form>
+
+    <!--results-->
+    <div ng-if="$ctrl.emptyInput">
+      <p class="text-center text-danger">Complete todos los campos</p>
+    </div>
+    

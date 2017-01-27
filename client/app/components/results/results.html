@@ -1,0 +1,31 @@
+<div>
+    <div class="addMarginBottom">
+        <h4>
+            <span class="fa fa-circle" ng-class="{'cheaperColorCode': $ctrl.results.cheaper.name == 'A', 'equalColorCode': $ctrl.results.cheaper.name == 'equal', 'expensiveColorCode': $ctrl.results.cheaper.name == 'B'}"></span>
+            Producto A:
+            <strong>{{$ctrl.results.cheaper.unitValue | currency}}</strong> por unidad
+        </h4>
+        <h4>
+            <span class="fa fa-circle" ng-class="{'cheaperColorCode': $ctrl.results.cheaper.name == 'B', 'equalColorCode': $ctrl.results.cheaper.name == 'equal', 'expensiveColorCode': $ctrl.results.cheaper.name == 'A'}"></span>
+            Producto B:
+            <strong>{{$ctrl.results.expensive.unitValue | currency}}</strong> por unidad
+        </h4>
+    </div>
+
+    <span ng-show="$ctrl.results.cheaper.name !== 'equal'">
+        <h3>
+            El producto {{$ctrl.results.cheaper.name}} es <strong>%{{$ctrl.results.stats.percentageSave | number : 1}}</strong>
+            <br>
+            más barato
+        </h3>
+        <h3>
+            En cada producto {{$ctrl.results.cheaper.name}} ahorra 
+            <br>
+            <strong>{{$ctrl.results.stats.unitsSave | number : 0}}</strong> unidades
+        </h3>
+    </span>
+
+    <span ng-show="$ctrl.results.cheaper.name == 'equal'">
+        <h4>Ambos productos tienen el mismo costo</h4>
+    </span>
+</div>
