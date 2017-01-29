@@ -12,7 +12,7 @@ Con esta aplicación vas a poder ingresar el precio y cantidad de dos productos 
 ![Clear form](https://github.com/ceciliaschiebel/cual-conviene/blob/master/screenshots/tap_cc_5.jpeg "Clear form")
 
 ![Equal cost](https://github.com/ceciliaschiebel/cual-conviene/blob/master/screenshots/tap_cc_6.jpeg "Equal cost")
-![Equal cost results](https://github.com/ceciliaschiebel/cual-conviene/blob/master/screenshots/tap_cc_6.jpeg "Equal cost results")
+![Equal cost results](https://github.com/ceciliaschiebel/cual-conviene/blob/master/screenshots/tap_cc_7.jpeg "Equal cost results")
 
 TO DO:
 - create .apk
